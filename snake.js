@@ -6,7 +6,9 @@ function createGrid() {
     for (let i = 0; i < 100; i++) {
         const square = document.createElement('div')
         console.log(square)
-        console.log(i)   
+        console.log(i)
+        square.classList.add('square')  
+        grid.appendChild(square)
     }
 }
 
