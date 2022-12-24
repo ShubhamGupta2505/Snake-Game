@@ -18,3 +18,8 @@ function createGrid() {
 }
 
 createGrid()
+
+currentsnake.forEach(index => squares[index].classList.add('snake'))
+function move() {
+
+}
