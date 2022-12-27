@@ -29,5 +29,7 @@ function move() {
    squares[currentsnake[0]].classList.add('snake')
 
 }
-move()
+// move()
 
+const timerId = setInterval(move(),1000)
+clearInterval(timerId)
