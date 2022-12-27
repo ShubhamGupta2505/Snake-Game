@@ -9,7 +9,7 @@ let appleIndex = 0
 let score = 0
 let invertalTime = 1000
 let speed = 0.9
-
+let timerId = 0
 
 function createGrid() {
     for (let i = 0; i < width*width; i++) {
@@ -27,6 +27,11 @@ function createGrid() {
 createGrid()
 
 currentsnake.forEach(index => squares[index].classList.add('snake'))
+
+function startGame() {
+    timerId = setInterval(move,invertalTime)
+}
+
 function move() {
     if(
         (currentsnake[0] + width >= width*width && direction === width ) ||
@@ -65,9 +70,7 @@ function move() {
    squares[currentsnake[0]].classList.add('snake')
 
 }
-move()
 
-let timerId = setInterval(move,invertalTime)
 // clearInterval(timerId)
 
 function generateApples(){
@@ -100,3 +103,4 @@ function control(e) {
     }
 }
 document.addEventListener('keyup',control)
+startButton.addEventListener('click',startGame)
