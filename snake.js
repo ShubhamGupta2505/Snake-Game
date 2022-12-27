@@ -35,17 +35,17 @@ let timerId = setInterval(move,1000)
 // clearInterval(timerId)
 
 function control(e) {
-    if(e.keyCode == 39) {
+    if(e.keyCode === 39) {
         console.log('right pressed')
     }
-    else if(e.keyCode == 37) {
+    else if(e.keyCode === 37) {
         console.log('left pressed')
     }
-    else if(e.keyCode == 38) {
+    else if(e.keyCode === 38) {
         console.log('up pressed')
     }
-    else if(e.keyCode == 40){
+    else if(e.keyCode === 40){
         console.log('down pressed')
     }
 }
-document.addEventListener('keyup',control)
+// document.addEventListener('keyup',control)
