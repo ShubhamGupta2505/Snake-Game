@@ -29,6 +29,18 @@ createGrid()
 currentsnake.forEach(index => squares[index].classList.add('snake'))
 
 function startGame() {
+    currentsnake.forEach(index => squares[index].classList.remove('snake'))
+    
+    squares[appleIndex].classList.remove('apple')
+    clearInterval(timerId)
+    currentsnake = [2,1,0]
+    score = 0
+    scoreDisplay.textContent = score
+    direction = 1
+    invertalTime = 1000
+    generateApples()
+    currentsnake.forEach(index => squares[index].classList.add('snake'))
+
     timerId = setInterval(move,invertalTime)
 }
 
