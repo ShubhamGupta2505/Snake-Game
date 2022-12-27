@@ -5,6 +5,7 @@ let squares =[]
 let currentsnake = [2,1,0]
 let direction =1
 const width = 10
+let appleIndex = 0
 
 function createGrid() {
     for (let i = 0; i < width*width; i++) {
@@ -41,6 +42,16 @@ move()
 
 let timerId = setInterval(move,1000)
 // clearInterval(timerId)
+
+function generateApples(){
+    do{
+        //generate random numbers 
+    }
+    while(squares[appleIndex].classList.contains('snake'))
+    squares[appleIndex].classList.add('apple')
+}
+
+
 
 function control(e) {
     if(e.keyCode === 39) {
