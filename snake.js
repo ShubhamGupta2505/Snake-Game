@@ -1,11 +1,12 @@
 const grid = document.querySelector('.grid')
 const startButton = document.getElementById('start')
-const score = document.getElementById('score')
+const scoreDisplay = document.getElementById('score')
 let squares =[]
 let currentsnake = [2,1,0]
 let direction =1
 const width = 10
 let appleIndex = 0
+let score = 0
 
 function createGrid() {
     for (let i = 0; i < width*width; i++) {
@@ -43,8 +44,13 @@ function move() {
     squares[tail].classList.add('snake')
     console.log(tail)
     //groe aour snake arrray
+    currentsnake.push(tail)
+    console.log(currentsnake)
     //generate a new apple
     generateApples()
+
+    score++
+    scoreDisplay.textContent = score
     //speed up our snake
 
 
