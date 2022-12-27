@@ -35,6 +35,21 @@ function move() {
    const tail = currentsnake.pop()
    squares[tail].classList.remove('snake')
    currentsnake.unshift(currentsnake[0] + direction)
+
+   if(squares[currentsnake[0]].classList.contains('apple')){
+    //remove the class appple
+    squares[currentsnake[0]].classList.remove('apple')
+    //grow snake by one by adding class of snake to it
+    squares[tail].classList.add('snake')
+    console.log(tail)
+    //groe aour snake arrray
+    //generate a new apple
+    generateApples()
+    //speed up our snake
+
+
+   }
+
    squares[currentsnake[0]].classList.add('snake')
 
 }
@@ -46,12 +61,13 @@ let timerId = setInterval(move,1000)
 function generateApples(){
     do{
         //generate random numbers 
+        appleIndex = Math.floor(Math.random() * squares.length)
     }
     while(squares[appleIndex].classList.contains('snake'))
     squares[appleIndex].classList.add('apple')
 }
 
-
+generateApples()
 
 function control(e) {
     if(e.keyCode === 39) {
