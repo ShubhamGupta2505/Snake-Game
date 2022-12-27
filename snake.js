@@ -7,6 +7,9 @@ let direction =1
 const width = 10
 let appleIndex = 0
 let score = 0
+let invertalTime = 1000
+let speed = 0.9
+
 
 function createGrid() {
     for (let i = 0; i < width*width; i++) {
@@ -52,6 +55,9 @@ function move() {
     score++
     scoreDisplay.textContent = score
     //speed up our snake
+    clearInterval(timerId)
+    invertalTime = invertalTime * speed
+    timerId = setInterval(move,invertalTime)
 
 
    }
@@ -61,7 +67,7 @@ function move() {
 }
 move()
 
-let timerId = setInterval(move,1000)
+let timerId = setInterval(move,invertalTime)
 // clearInterval(timerId)
 
 function generateApples(){
